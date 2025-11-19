@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Sinta - Pelajar Akuntansi</title>
+    <!-- Memuat Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk tema warna biru kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af', // Warna biru tua untuk background/header
+                        'accent-blue': '#3b82f6',  // Warna biru cerah untuk tombol/aksen
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Menggunakan font Inter secara default */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Smooth scrolling untuk navigasi */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- 1. Header dan Navigasi (Selalu di atas) -->
+    <header class="sticky top-0 z-50 bg-primary-blue shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex justify-between items-center">
+                <a href="#beranda" class="text-xl font-bold text-white hover:text-blue-200 transition duration-300">SINTA P.</a>
+                
+                <!-- Menu Navigasi Desktop -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#beranda" class="text-white hover:text-accent-blue transition duration-300">Beranda</a>
+                    <a href="#profil" class="text-white hover:text-accent-blue transition duration-300">Profil</a>
+                    <a href="#pendidikan" class="text-white hover:text-accent-blue transition duration-300">Pendidikan</a>
+                    <a href="#keahlian" class="text-white hover:text-accent-blue transition duration-300">Keahlian</a>
+                    <a href="#kontak" class="text-white hover:text-accent-blue transition duration-300">Kontak</a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="menu-button" class="text-white md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- Menu Navigasi Mobile (Disembunyikan secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-blue border-t border-blue-700">
+            <a href="#beranda" onclick="toggleMenu()" class="block px-4 py-2 text-white hover:bg-blue-700 transition duration-300">Beranda</a>
+            <a href="#profil" onclick="toggleMenu()" class="block px-4 py-2 text-white hover:bg-blue-700 transition duration-300">Profil</a>
+            <a href="#pendidikan" onclick="toggleMenu()" class="block px-4 py-2 text-white hover:bg-blue-700 transition duration-300">Pendidikan</a>
+            <a href="#keahlian" onclick="toggleMenu()" class="block px-4 py-2 text-white hover:bg-blue-700 transition duration-300">Keahlian</a>
+            <a href="#kontak" onclick="toggleMenu()" class="block px-4 py-2 text-white hover:bg-blue-700 transition duration-300">Kontak</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        
+        <!-- 2. Bagian Beranda (Hero Section) -->
+        <section id="beranda" class="pt-24 pb-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-primary-blue leading-tight mb-4">
+                    Halo, Saya <span class="text-accent-blue">Sinta</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8">
+                    Pelajar SMK Jurusan Akuntansi yang Siap Belajar dan Berkembang.
+                </p>
+                <!-- Tombol CTA -->
+                <a href="#kontak" class="inline-block px-8 py-3 bg-accent-blue text-white font-semibold rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                    Hubungi Saya
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- 3. Bagian Profil -->
+        <section id="profil" class="py-16 md:py-24 bg-gray-100">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">Profil Singkat</h2>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <!-- Kolom Kiri: Deskripsi -->
+                    <div class="space-y-4">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Saya Sinta, seorang pelajar aktif di SMK Dewi Sartika, mengambil jurusan Akuntansi. Saya memiliki motivasi tinggi untuk memahami dasar-dasar keuangan dan pembukuan. Saya percaya bahwa ketelitian dan kemampuan mengolah data adalah kunci sukses di dunia kerja.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Saat ini saya sedang mencari kesempatan untuk mengaplikasikan ilmu yang saya peroleh melalui praktik kerja (magang) atau proyek kolaboratif yang menantang.
+                        </p>
+                        <ul class="text-gray-700 space-y-2 mt-4">
+                            <li><strong class="font-semibold text-primary-blue">Nama:</strong> Sinta</li>
+                            <li><strong class="font-semibold text-primary-blue">Status:</strong> Pelajar</li>
+                            <li><strong class="font-semibold text-primary-blue">Lokasi:</strong> Indonesia</li>
+                        </ul>
+                    </div>
+                    <!-- Kolom Kanan: Gambar Placeholder (Ganti dengan foto Sinta nanti) -->
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 bg-accent-blue/20 rounded-full flex items-center justify-center shadow-xl border-4 border-accent-blue/50">
+                            <span class="text-xl text-primary-blue font-bold">Foto Sinta (Placeholder)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Bagian Pendidikan -->
+        <section id="pendidikan" class="py-16 md:py-24 bg-white">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">Riwayat Pendidikan</h2>
+                
+                <!-- Kartu Pendidikan SMK -->
+                <div class="max-w-3xl mx-auto p-6 md:p-8 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-500">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-semibold text-gray-800">SMK Dewi Sartika</h3>
+                        <span class="text-sm font-medium text-primary-blue bg-blue-100 px-3 py-1 rounded-full">20XX - Sekarang</span>
+                    </div>
+                    <p class="text-xl text-accent-blue mb-3">Jurusan: Akuntansi (AK)</p>
+                    <p class="text-gray-600">
+                        Fokus pada materi dasar-dasar akuntansi, pembukuan manual dan digital, pengoperasian aplikasi perkantoran (spreadsheet), serta administrasi keuangan perusahaan. Memiliki minat pada pembukuan yang terstruktur dan pelaporan yang akurat.
+                    </p>
+                </div>
+
+                <!-- Tambahkan riwayat lain jika ada (misal: SMP/Kursus) -->
+            </div>
+        </section>
+        
+        <!-- 5. Bagian Keahlian (Skills) -->
+        <section id="keahlian" class="py-16 md:py-24 bg-gray-100">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-12">Keahlian (Skills)</h2>
+                
+                <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Kartu Keahlian 1: Microsoft Excel -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md border-t-4 border-accent-blue hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-accent-blue mb-2 block">📊</span>
+                        <p class="font-semibold text-lg">Microsoft Excel</p>
+                        <small class="text-gray-500">Input data, formula dasar, pivot table.</small>
+                    </div>
+
+                    <!-- Kartu Keahlian 2: Jurnal Akuntansi -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md border-t-4 border-accent-blue hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-accent-blue mb-2 block"> ledger </span>
+                        <p class="font-semibold text-lg">Jurnal Akuntansi Dasar</p>
+                        <small class="text-gray-500">Jurnal umum, buku besar, neraca saldo.</small>
+                    </div>
+
+                    <!-- Kartu Keahlian 3: Komunikasi -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md border-t-4 border-accent-blue hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-accent-blue mb-2 block">🗣️</span>
+                        <p class="font-semibold text-lg">Komunikasi Interpersonal</p>
+                        <small class="text-gray-500">Mampu bekerja sama dalam tim.</small>
+                    </div>
+
+                    <!-- Kartu Keahlian 4: Ketelitian -->
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md border-t-4 border-accent-blue hover:shadow-xl transition duration-300">
+                        <span class="text-4xl text-accent-blue mb-2 block">🔍</span>
+                        <p class="font-semibold text-lg">Ketelitian Data</p>
+                        <small class="text-gray-500">Cekatan dalam verifikasi angka.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. Bagian Kontak -->
+        <section id="kontak" class="py-16 md:py-24 bg-white">
+            <div class="px-4 sm:px-6 lg:px-8 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-blue mb-8">Hubungi Saya</h2>
+                <p class="text-center text-lg text-gray-600 mb-10">
+                    Mari berdiskusi tentang peluang magang atau proyek. Saya siap dihubungi!
+                </p>
+
+                <!-- Formulir Kontak (Dummy - tidak berfungsi tanpa backend) -->
+                <div class="p-8 bg-gray-50 rounded-xl shadow-2xl border border-blue-200">
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div class="mb-5">
+                            <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-blue focus:border-accent-blue transition duration-300">
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-blue focus:border-accent-blue transition duration-300">
+                        </div>
+                        <div class="mb-5">
+                            <label for="pesan" class="block text-sm font-medium text-gray-700 mb-1">Pesan / Minat</label>
+                            <textarea id="pesan" name="pesan" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent-blue focus:border-accent-blue transition duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-blue text-white font-bold py-3 rounded-lg hover:bg-blue-600 transition duration-300 shadow-lg transform hover:scale-[1.01]">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                    <!-- Pesan Notifikasi -->
+                    <div id="notification-box" class="mt-4 hidden p-3 text-sm rounded-lg bg-green-100 text-green-700">
+                        Pesan berhasil dikirim! (Ini hanya simulasi, formulir ini tidak mengirim email sungguhan).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white text-sm">
+            <p>&copy; 2024 Portofolio Sinta. Dibuat dengan semangat belajar.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Interaksi UI -->
+    <script>
+        // Fungsi untuk mengaktifkan/menonaktifkan menu mobile
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        document.getElementById('menu-button').addEventListener('click', toggleMenu);
+
+        // Fungsi simulasi untuk submit form (karena tidak ada backend)
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Mencegah refresh halaman
+            
+            // Tampilkan notifikasi
+            const notificationBox = document.getElementById('notification-box');
+            notificationBox.classList.remove('hidden');
+            
+            // Sembunyikan notifikasi setelah 5 detik
+            setTimeout(() => {
+                notificationBox.classList.add('hidden');
+                // Reset form
+                event.target.reset(); 
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
